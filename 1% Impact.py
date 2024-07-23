@@ -1,11 +1,23 @@
 import random
 import pandas as pd
+import requests
+from io import BytesIO
 
+# URL of the Excel file in your GitHub repository
+QUIZ_DATA = 'https://github.com/Shimmyou/CIP/raw/main/Environmental_Impact_Quiz_Questions.xlsx'
 
-file_path = r'C:\Users\swojcies.WMAD\Desktop\StanfordProject\Environmental_Impact_Quiz_Questions.xlsx'
-df = pd.read_excel(file_path)
+def get_quiz_data():
+    response = requests.get(QUIZ_DATA)
+    response.raise_for_status()  # Ensure the request was successful
+    data = response.content
+    df = pd.read_excel(BytesIO(data))
+    return df
+
+# Load the Quiz data from GitHub repository
+df = get_quiz_data()
 MAX = len(df)
 ROUNDS = 20
+
 
     #spliting the dataframe into columns
 
