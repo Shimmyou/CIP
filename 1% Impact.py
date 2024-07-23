@@ -93,5 +93,3 @@ quizlet(df)
     #do każdego pytania przypisać 4 warianty, z czego tylko 1 prawidłowy
     #po uzyskaniu odpowiedzi informacja zwrotna o tym czy prawidłowa czy nie, podsumowanie, informacja o zdobytych punktach
     #losowe przypisanie odpowiedzi do różnych liter (a/b/c/d)
-
-    # Give a "Hint" option to have more info about topic
